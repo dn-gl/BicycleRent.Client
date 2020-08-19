@@ -1,0 +1,14 @@
+<div class="item-wrapper" style="display: flex; justify-content: space-between;">
+  <div class="fields" style="display: flex;">
+    <div class="bicycle-field">{{bicycle.name}} /</div>
+    <div class="bicycle-field">{{bicycle.type.name}} /</div>
+    <div class="bicycle-field">{{bicycle.price}}</div>
+  </div>
+  <div *ngIf="!bicycle.rentalStatus" class="button-wrapper">
+    <button class="btn btn-danger my-button" type="submit" (click)="updateRentStatus()">Cancel rent</button>
+  </div>
+  <div *ngIf="bicycle.rentalStatus" class="button-wrapper">
+    <button class="btn btn-primary my-button" type="submit" (click)="updateRentStatus()">Rent</button>
+    <button class="btn btn-danger my-button" type="submit" (click)="deleteBicycle()">Delete</button>
+  </div>
+</div>

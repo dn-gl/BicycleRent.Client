@@ -1,0 +1,26 @@
+<div class="new-rent-wrapper">
+  <form [formGroup]=createForm>
+    <div class="form-group" style="display: flex; justify-content: space-around;">
+      <div class="form-item">
+        <label for="exampleForm2">Name</label>
+        <input type="text" id="exampleForm2" class="form-control" formControlName="name">
+      </div>
+      <div class="form-item">
+        <label class="form-inactiv-item" for="">
+          Type
+        </label>
+        <select class="browser-default custom-select" formControlName="type">
+          <option *ngFor="let type of bicycleTypes" value="{{type.id}}">{{type.name}}</option>
+        </select>
+      </div>
+      <div class="form-item">
+          <label for="exampleForm3">Price</label>
+          <input type="text" id="exampleForm3" class="form-control" formControlName="price">
+      </div>
+      <div class="form-item">
+        <div class="isValid" *ngIf="isFormDataValid()"></div>
+        <button class="btn btn-info create-btn" type="submit" (click)="createBicycle()" [disabled]="invalidFormData">Submit Rent</button>
+      </div>
+    </div>
+  </form>
+</div>
