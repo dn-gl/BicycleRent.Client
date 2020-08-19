@@ -11,7 +11,6 @@ import { AppComponent } from 'src/app/app.component';
 export class BicycleItemComponent implements OnInit {
 
   @Input() bicycle: Bicycle;
-  isTrue: boolean = false;
   
   constructor(private bicycleService: BicycleService, private appComp: AppComponent) { }
 
